@@ -1,0 +1,170 @@
+*********** Comandos de Docker más comunes
+
+--- Finding the version #Una de las primeras cosas que desea saber es cómo encontrar la versión de Docker instalada.
+
+docker --version
+
+--- Downloading image #Supongamos que necesita extraer la imagen de la ventana acoplable de Dockerhub (repositorio de Docker). El siguiente ejemplo de extracción de la imagen del servidor HTTP Apache.
+
+docker pull httpd
+
+--- Images # Enumere todas las imágenes de la ventana acoplable extraídas en el sistema con detalles de imagen como ETIQUETA / ID DE IMAGEN / TAMAÑO, etc.
+
+docker images
+
+
+--- Run # Ejecute la imagen de la ventana acoplable mencionada en el comando. Este comando creará un contenedor acoplable en el que se ejecutará el servidor HTTP Apache.
+
+docker run
+
+--- What’s running? # ps enumera todos los contenedores Docker que se están ejecutando con los detalles del contenedor.
+
+docker ps
+
+
+--- ps -a # Enumere todos los contenedores de Docker que se ejecutan / salieron / detuvieron con los detalles del contenedor.
+
+docker ps -a
+
+--- exec #Acceda al contenedor de la ventana acoplable y ejecutar comandos dentro del contenedor. Estoy accediendo al contenedor del servidor Apache en este ejemplo.
+
+docker exec -it id_docker bash
+
+
+--- Removing container #Elimine el contenedor de la ventana acoplable con el ID del contenedor mencionado en el comando.
+
+docker rm id_docker
+
+--- Removing image # Elimine la imagen de la ventana acoplable con la identificación de la imagen de la ventana acoplable mencionada en el comando
+
+docker rmi id_docker
+
+
+--- Restart Docker # Reinicie el contenedor de la ventana acoplable con la identificación del contenedor mencionada en el comando.
+
+docker restart id_docker
+
+
+--- Stopping Docker # Detenga un contenedor con el ID de contenedor mencionado en el comando.
+
+docker stop id_docker
+
+
+--- Starting Docker # Este comando en la ventana acoplable inicia el contenedor de la ventana acoplable con la identificación del contenedor mencionada en el comando.
+
+docker start id_docker
+
+
+--- Kill # Detenga el contenedor Docker inmediatamente. El comando de detención de Docker detiene el contenedor con gracia, esa es la diferencia entre los comandos de detención y de detención.
+
+docker kill id_docker
+
+--- Commit #Guarde una nueva imagen de Docker con el ID de contenedor mencionado en el comando en el sistema local. En el siguiente ejemplo, geekflare es el nombre de usuario y httpd_image es el nombre de la imagen.
+
+docker commit id_docker geekflare/httpd_image
+
+
+--- Login # Inicie sesión en Docker Hub. Se le pedirán las credenciales de su Docker Hub para iniciar sesión.
+
+docker login
+
+--- Push # Cargue una imagen de la ventana acoplable con el nombre de la imagen que se menciona en el comando en la ventana acoplable.
+
+docker push geekflare/httpd_image
+
+
+--- Docker network # El siguiente comando en Docker enumera los detalles de toda la red en el clúster.
+
+docker network ls
+
+docker network
+
+Commands:
+
+connect     Connect a container to a network
+
+create      Create a network
+
+disconnect  Disconnect a container from a network
+
+inspect     Display detailed information on one or more networks
+
+ls          List networks
+
+prune       Remove all unused networks
+
+rm          Remove one or more networks
+
+Run 'docker network COMMAND --help' for more information on a command.
+
+--- Docker info # Obtenga información detallada sobre la ventana acoplable instalada en el sistema, incluida la versión del kernel, el número de contenedores e imágenes, etc.
+
+docker info
+
+--- Copying file # Copie un archivo de un contenedor de la ventana acoplable al sistema local. En este ejemplo, estoy copiando el archivo httpd.pid dentro de un contenedor docker con la identificación 09ca6feb6efc a / home / geekflare /
+
+sudo docker cp 09ca6feb6efc:/usr/local/apache2/logs/httpd.pid /home/geekflare/
+
+--- Checking history # Muestra el historial de una imagen de la ventana acoplable con el nombre de la imagen mencionado en el comando.
+
+docker history httpd
+
+--- Checking logs # Muestre los registros del contenedor de la ventana acoplable con la identificación contenida mencionada en el comando.
+
+docker logs id_docker
+
+--- Searching image # Busque una imagen de docker en dockerhub con el nombre mencionado en el comando.
+
+docker search hadoop
+
+
+--- Updating configuration #  Actualice las configuraciones de contenedores. Esto muestra todas las opciones de actualización.
+
+docker update --help
+
+
+#Ejecute el siguiente comando para actualizar la configuración de la CPU del contenedor de la ventana acoplable con la identificación del contenedor mencionada en el comando.
+
+docker update -c 1 id_docker
+
+
+---- Creating volume #Cree un volumen que el contenedor de la ventana acoplable utilizará para almacenar datos.
+
+docker volume create
+
+# Ejecute el siguiente comando si el volumen se creó o no.
+
+docker volume ls
+
+
+--- Installing plugin # Instale un complemento de docker vieux / sshfs con el entorno de depuración establecido en 1.
+
+docker plugin install vieux/sshfs DEBUG=1
+
+
+--- Logout # Cerrar sesión en dockerhub.
+
+docker logout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
