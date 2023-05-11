@@ -35,6 +35,8 @@ docker exec -it id_docker bash
 
 docker rm id_docker
 
+docker container prune # Elimina todos los contenedores y tener cuidado con este comando.
+
 --- Removing image # Elimine la imagen de la ventana acoplable con la identificación de la imagen de la ventana acoplable mencionada en el comando
 
 docker rmi id_docker
@@ -115,7 +117,7 @@ docker logs id_docker
 
 --- Searching image # Busque una imagen de docker en dockerhub con el nombre mencionado en el comando.
 
-docker search hadoop
+docker search nombre_imagen
 
 
 --- Updating configuration #  Actualice las configuraciones de contenedores. Esto muestra todas las opciones de actualización.
